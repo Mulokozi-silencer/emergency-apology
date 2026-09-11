@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>An Emergency Apology From Your Sleepy Boyfriend ❤️</title>
+  <meta name="description" content="A tiny website made to say something very important: I'm sorry. ❤️" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="An Emergency Apology From Your Sleepy Boyfriend ❤️" />
+  <meta property="og:description" content="A tiny website made to say something very important: I'm sorry. ❤️" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-preview.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="An Emergency Apology From Your Sleepy Boyfriend ❤️" />
+  <meta name="twitter:description" content="A tiny website made to say something very important: I'm sorry. ❤️" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+    <button class="lang-btn active" id="langEN" data-lang="en" aria-pressed="true">EN</button>
+    <span class="lang-sep" aria-hidden="true"></span>
+    <button class="lang-btn" id="langSW" data-lang="sw" aria-pressed="false">SW</button>
+  </div>
+
+  <!-- Floating background hearts -->
+  <div class="bg-particles" id="bgParticles" aria-hidden="true"></div>
+
+  <!-- Confetti container -->
+  <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="section hero" id="hero">
+      <div class="siren-lights" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="hero-badge fade-in delay-1" data-i18n="heroBadge"></div>
+      <h1 class="hero-title fade-in delay-2" data-i18n="heroTitle">
+        <span class="heart-pulse">❤️</span>
+      </h1>
+      <p class="hero-dear fade-in delay-3">
+        <span data-i18n="heroDear"></span> <span class="name-highlight" id="dearName"></span>
+      </p>
+      <p class="hero-subtitle fade-in delay-4 typewriter" id="heroSubtitle"></p>
+    </section>
+
+    <!-- ===== CASE FILE ===== -->
+    <section class="section case-file" id="caseFile">
+      <div class="section-label" data-i18n="caseLabel"></div>
+      <h2 class="section-title" data-i18n="caseTitle"></h2>
+      <div class="case-grid" id="caseGrid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE DEFENSE ===== -->
+    <section class="section defense" id="defense">
+      <div class="section-label" data-i18n="defenseLabel"></div>
+      <h2 class="section-title" data-i18n="defenseTitle"></h2>
+      <button class="btn-primary defense-btn" id="defenseBtn" aria-expanded="false" data-i18n="defenseBtn"></button>
+
+      <div class="defense-sequence hidden" id="defenseSequence" role="region" aria-live="polite">
+        <div class="court-line" id="courtLine0"></div>
+        <div class="court-line hidden" id="courtLine1"></div>
+        <div class="court-line hidden" id="courtLine2"></div>
+        <div class="court-line hidden" id="courtLine3"></div>
+        <div class="court-line hidden" id="courtLine4"></div>
+
+        <div class="sleep-reveal hidden" id="sleepReveal">
+          <div class="sleep-emoji">😴</div>
+          <div class="sleep-word" data-i18n="sleepWord"></div>
+          <div class="zzz-container" aria-hidden="true">
+            <span class="zzz z1">z</span>
+            <span class="zzz z2">z</span>
+            <span class="zzz z3">Z</span>
+          </div>
+        </div>
+
+        <div class="but-section hidden" id="butSection">
+          <p class="but-word" data-i18n="butWord"></p>
+          <p class="but-text" data-i18n="butText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EVIDENCE CARDS ===== -->
+    <section class="section evidence" id="evidence">
+      <div class="section-label" data-i18n="evidenceLabel"></div>
+      <h2 class="section-title" data-i18n="evidenceTitle"></h2>
+      <div class="evidence-grid" id="evidenceGrid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- ===== SINCERE APOLOGY ===== -->
+    <section class="section apology" id="apology">
+      <div class="apology-inner">
+        <div class="apology-deco" aria-hidden="true">❤️</div>
+        <h2 class="apology-heading" data-i18n="apologyHeading"></h2>
+        <div class="apology-text" id="apologyText"></div>
+      </div>
+    </section>
+
+    <!-- ===== NEGOTIATIONS ===== -->
+    <section class="section negotiations" id="negotiations">
+      <div class="section-label" data-i18n="negoLabel"></div>
+      <h2 class="section-title" data-i18n="negoTitle"></h2>
+      <div class="nego-grid" id="negoGrid">
+        <!-- Populated by JS -->
+      </div>
+      <p class="offer-valid slide-up delay-6">
+        <span data-i18n="offerValidText"></span> <strong data-i18n="offerValidBold"></strong>
+      </p>
+    </section>
+
+    <!-- ===== FORGIVENESS BUTTONS ===== -->
+    <section class="section verdict" id="verdict">
+      <div class="section-label" data-i18n="verdictLabel"></div>
+      <h2 class="section-title" data-i18n="verdictTitle"></h2>
+      <p class="verdict-sub" data-i18n="verdictSub"></p>
+
+      <div class="verdict-buttons">
+        <button class="btn-forgive" id="forgiveBtn" data-i18n="forgiveBtn"></button>
+        <button class="btn-angry" id="angryBtn" data-i18n="angryBtn"></button>
+      </div>
+
+      <!-- Forgive response -->
+      <div class="response-box forgive-response hidden" id="forgiveResponse" role="region" aria-live="polite">
+        <div class="response-emoji">😭❤️</div>
+        <h3 data-i18n="forgiveThankYou"></h3>
+        <p class="system-status" data-i18n="systemStatusLabel"></p>
+        <p class="system-status-value" data-i18n="systemStatusValue"></p>
+      </div>
+
+      <!-- Angry response -->
+      <div class="response-box angry-response hidden" id="angryResponse" role="region" aria-live="polite">
+        <div id="angryResponseText"></div>
+      </div>
+    </section>
+
+    <!-- ===== SECRET BUTTON ===== -->
+    <section class="section secret-section" id="secretSection">
+      <button class="btn-secret" id="secretBtn" aria-expanded="false" data-i18n="secretBtn"></button>
+      <div class="secret-content hidden" id="secretContent" role="region" aria-live="polite">
+        <div class="secret-inner">
+          <p class="secret-label" data-i18n="secretLabel"></p>
+          <div class="secret-text" id="secretText"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL ===== -->
+    <section class="section final" id="final">
+      <h2 class="final-heading" data-i18n="finalHeading"></h2>
+      <p class="final-maybe" data-i18n="finalMaybe"></p>
+      <p class="final-smile" data-i18n="finalSmile"></p>
+      <div class="final-divider" aria-hidden="true">· · ·</div>
+      <p class="final-whenever" data-i18n="finalWhenever"></p>
+      <p class="final-talk" data-i18n="finalTalk"></p>
+      <p class="final-signature" id="finalSignature"></p>
+
+      <!-- WhatsApp -->
+      <a class="btn-whatsapp" id="whatsappBtn" href="#" target="_blank" rel="noopener noreferrer" data-i18n="whatsappBtn"></a>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
